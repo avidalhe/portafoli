@@ -1,0 +1,7 @@
+[project]
+name = "portafoli"
+version = "0.1.0"
+description = "Portafoli de nauvi.dev"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
