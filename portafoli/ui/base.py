@@ -10,7 +10,7 @@ def base_page(child: rx.Component, *args, **kwargs) -> rx.Component:
             navbar(),
             child,
             footer(),
-            width = "100%",
+            max_width = "100%",
             id = 'my-content-area-el',
         ),
 

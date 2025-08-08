@@ -18,9 +18,12 @@ def about_me () -> rx.Component:
             "About me",
             size = '5', 
             weight='bold',
-            justify='stard'
+            align="left",
         ), # rx.heading
-
+        rx.text(
+            
+        ), # rx.text
+        width = '100%',
         id = 'aboutme'
     )
 
@@ -41,6 +44,7 @@ def index() -> rx.Component:
             about_me(),
             
         align_items = "center",
+        min_widht = "50vw",
         min_height="85vh",
         ),
     )

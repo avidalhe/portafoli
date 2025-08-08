@@ -8,7 +8,7 @@ def navbar() -> rx.Component:
             # Configurem per pantalla d'ordinador
             rx.hstack(
                 rx.hstack(
-                    rx.heading("Nauvi.dev", size = "7", weight='bold',),
+                    rx.heading("Nauvi.dev", size = "6", weight='bold',),
                     aling_items = 'center',
                     spacing="4",
                     align='start',
@@ -28,6 +28,14 @@ def navbar() -> rx.Component:
         ), # rx.desktop_only
         rx.mobile_and_tablet(
             # Configurem per pantalla de tablet o mobil
+            rx.hstack(
+                rx.heading(
+                    "Nauvi.dev", 
+                    size = '6',
+                    weight='bold',
+                ),#rx.heading
+                align_items = "center",
+            ),#rx.hstack
             
         ), # rx.mobile_and_tablet
         bg = rx.color("tomato", 3),
