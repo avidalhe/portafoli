@@ -14,7 +14,14 @@ class State(rx.State):
 def about_me () -> rx.Component:
     """Aquí pintem les coses sobre mi"""
     return rx.container(
+        rx.heading(
+            "About me",
+            size = '5', 
+            weight='bold',
+            justify='stard'
+        ), # rx.heading
 
+        id = 'aboutme'
     )
 
 def index() -> rx.Component:
@@ -31,6 +38,8 @@ def index() -> rx.Component:
                 size = "8",
                 radius='large',
             ),
+            about_me(),
+            
         align_items = "center",
         min_height="85vh",
         ),

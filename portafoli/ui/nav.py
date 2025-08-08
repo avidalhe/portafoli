@@ -7,12 +7,23 @@ def navbar() -> rx.Component:
         rx.desktop_only(
             # Configurem per pantalla d'ordinador
             rx.hstack(
-                rx.heading("Nauvi.dev", size = "7", weight='bold',),
-                aling_items = 'center',
-                spacing="4",
-            ), # rx.hastck
+                rx.hstack(
+                    rx.heading("Nauvi.dev", size = "7", weight='bold',),
+                    aling_items = 'center',
+                    spacing="4",
+                    align='start',
+                ), # rx.hstack
+                rx.hstack(
+                    rx.link(
+                        'About me',
+                        href="/#aboutme",
+                    ),# rx.link
+                    align_items='center',
+                    justify='between'
+                ),
+            ), # rx.hstack
             justify = "between",
-            aling_items = "center",
+            # aling_items = "center",
             id = "my_navbar_hstack-desktop"
         ), # rx.desktop_only
         rx.mobile_and_tablet(
