@@ -2,28 +2,22 @@ import reflex as rx
 
 from ..navigation import routes
 
+def navbar_link(text: str, url: str)->rx.Component:
+    return rx.link(
+        rx.text(text, size='4', weight='medium'),
+        href=url,
+    )
+
+
 def navbar() -> rx.Component:
     return rx.box(
         rx.desktop_only(
             # Configurem per pantalla d'ordinador
             rx.hstack(
-                rx.hstack(
-                    rx.heading("Nauvi.dev", size = "6", weight='bold',),
-                    aling_items = 'center',
-                    spacing="4",
-                    align='start',
-                ), # rx.hstack
-                rx.hstack(
-                    rx.link(
-                        'About me',
-                        href="/#aboutme",
-                    ),# rx.link
-                    align_items='center',
-                    justify='between'
-                ),
+                rx.heading("Nauvi.dev", size = "6", weight='bold',), 
+                justify='start',
+                align_items='center'
             ), # rx.hstack
-            justify = "between",
-            # aling_items = "center",
             id = "my_navbar_hstack-desktop"
         ), # rx.desktop_only
         rx.mobile_and_tablet(
