@@ -55,9 +55,9 @@ def about_me () -> rx.Component:
         ), # rx.heading
         rx.text(
             """
-            Sóc un estudiant d'enginyeria industrial a punt d’acabar la carrera, amb una ment analítica i orientada a la resolució de problemes.
-            Tinc experiència en el desenvolupament d’aplicacions web amb Python (Reflex), i estic expandint els meus coneixements cap a Rust i Flutter per crear solucions multiplataforma.
-            M’apassionen els projectes amb impacte, la combinació de programació i càlcul, i estic construint un portafoli que reflecteixi el meu creixement i visió.
+            Sóc un estudiant d'enginyeria industrial a punt d’acabar la carrera, amb una ment analítica i gran capacitat de resoldre problemes problemes.
+            Tinc experiència en el desenvolupament d’aplicacions web amb Python (Reflex), i estic expandint els meus coneixements cap a Rust i Flutter per tal de crear solucions innovadores i multiplataforma.
+            M’apassionen els projectes amb impacte i la combinació de programació amb càlcul.
             Sempre amb ganes d’aprendre, compartir coneixement i seguir evolucionant com a persona i com a professional.
             """,
             align='left',
@@ -72,7 +72,7 @@ def index() -> rx.Component:
     my_child = rx.container(
         rx.vstack(
             rx.heading(
-                "Arnau Vidal", 
+                "Arnau Vidal Hernando", 
                 size = "8",
             ),
             rx.avatar(
