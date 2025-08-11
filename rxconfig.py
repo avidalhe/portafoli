@@ -6,4 +6,5 @@ config = rx.Config(
         rx.plugins.SitemapPlugin(),
         rx.plugins.TailwindV4Plugin(),
     ],
+    
 )

@@ -76,7 +76,7 @@ def index() -> rx.Component:
                 size = "8",
             ),
             rx.avatar(
-                src = "avatar.jpeg",
+                src = "avatar.jpg",
                 fallback="nauvi",
                 size = "8",
                 radius='large',
