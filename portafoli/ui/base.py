@@ -12,6 +12,7 @@ def base_page(child: rx.Component, *args, **kwargs) -> rx.Component:
             footer(),
             max_width = "100%",
             id = 'my-content-area-el',
+            justify='center',
         ),
 
         rx.color_mode.button(position="bottom-left"),
