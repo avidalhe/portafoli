@@ -94,5 +94,5 @@ def index() -> rx.Component:
     return base_page(my_child)
 
 
-app = rx.App()
+app = rx.App(enable_state=False)
 app.add_page(index)
