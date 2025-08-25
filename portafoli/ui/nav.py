@@ -14,7 +14,7 @@ def navbar() -> rx.Component:
         rx.desktop_only(
             # Configurem per pantalla d'ordinador
             rx.hstack(
-                rx.heading("Nauvi.cat", size = "6", weight='bold',), 
+                rx.heading("Nauvi.cat", size = "6", weight='bold',as_='h1', aria_label='Nauvi.cat'), 
                 justify='start',
                 align_items='center'
             ), # rx.hstack
@@ -27,6 +27,8 @@ def navbar() -> rx.Component:
                     "Nauvi.cat", 
                     size = '6',
                     weight='bold',
+                    as_='h1',
+                    aria_label='Nauvi.cat',
                 ),#rx.heading
                 align_items = "center",
             ),#rx.hstack
