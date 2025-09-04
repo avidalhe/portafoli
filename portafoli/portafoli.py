@@ -1,7 +1,7 @@
 import reflex as rx
 
 from .ui.base import base_page
-    
+
 def projectes_destacats()->rx.Component:
     """Creem la secció on es mostren els projectes que vaig fent"""
     imatge = rx.color_mode_cond(
@@ -18,23 +18,30 @@ def projectes_destacats()->rx.Component:
             aria_label='Projectes destecats',
         ), # rx.heading
         rx.card(
-            rx.link(
-                rx.flex(
-                    # fem que canvii el logo en canviar el color de fons
-                    imatge,
-                    rx.box(
-                        rx.heading('TaskTimer', as_='h2'),
-                        rx.text(
-                            'Primer projecte personal',
-                        ), #rx.text
-                    ), #rx.box
-                    spacing='2'
-                ), # rx.flex
-                href='https://task-timer.up.railway.app/',
-                aria_label='Link del projecte TastkTimer',
-                # Fem que s'obri una pastanya nova
-                is_external=True,
-            ), #rx.link
+            rx.hover_card.root(
+                rx.hover_card.trigger(
+                    rx.link(
+                        rx.flex(
+                            # fem que canvii el logo en canviar el color de fons
+                            imatge,
+                            rx.box(
+                                rx.heading('TaskTimer', as_='h2'),
+                                rx.text(
+                                    'Primer projecte personal',
+                                ), #rx.text
+                            ), #rx.box
+                            spacing='2'
+                        ), # rx.flex
+                        href='https://task-timer.up.railway.app/',
+                        aria_label='Link del projecte TastkTimer',
+                        # Fem que s'obri una pastanya nova
+                        is_external=True,
+                    ), #rx.link
+                ), #rx.hover_card.trigger
+                rx.hover_card.content(
+                        rx.text('Aquesta és la meva primera aplicació, encara està en fase de desenvolupant, disculpeu les molèsties :/'),
+                ), # rx.hover_card.content
+            ), #rx.hover_card.root     
             align_items='center',
             margin_top='1em',
             width='100%',
