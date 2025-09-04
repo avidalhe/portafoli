@@ -5,7 +5,7 @@ from .ui.base import base_page
 def projectes_destacats()->rx.Component:
     """Creem la secció on es mostren els projectes que vaig fent"""
     imatge = rx.color_mode_cond(
-                        dark=rx.image(src = 'Logo_StudyTimer_white.svg', alt='Logo TaskTimer',size='2.5em',decoding="async"),
+                        dark=rx.image(src = 'Logo_StudyTimer_white.svg', alt='Logo TaskTimer',width='2.5em',decoding="async"),
                         light=rx.image(src= 'Logo_StudyTimer.svg', alt='Logo TaskTimer', width='2.5em',decoding="async"),
                     )# rx.color_mode_cond
     return rx.container(
@@ -40,6 +40,7 @@ def projectes_destacats()->rx.Component:
             width='100%',
         ), # rx.card
         width='100%',
+        align='center',
     )
 
 
@@ -65,35 +66,48 @@ def about_me () -> rx.Component:
             margin_top = '1em',
         ), # rx.text
         width = '100%',
+        align='center',
     )
 
 @rx.page(route="/", 
         title="Arnau Vidal | Enginyer Industrial i Desenvolupador de Software",
-        description="Portafoli d'Arnau Vidal, enginyer industrial i creador de solucions digitals. Projectes en Python, Rust i aplicacions web com StudyTimer.",
-        # keyword="Arnau Vidal, portafoli, enginyer industrial, desenvolupador Python, desenvolupador Rust, aplicacions web, TaskTimer, nauvi.dev",
+        description="Portafoli d'Arnau Vidal, enginyer industrial i creador de solucions digitals. Projectes en Python, Rust i aplicacions web com TaskTimer.",
         meta=[
-            {"name":"description", "content":"Portafoli d'Arnau Vidal, enginyer industrial i creador de solucions digitals. Projectes en Python, Rust i aplicacions web com TaskTimer."},
-            {"name":"keywords", "content":"Arnau Vidal, portafoli, enginyer industrial, desenvolupador Python, desenvolupador Rust, aplicacions web, TaskTimer, nauvi.dev"},
-            {"name":"author", "content":"Arnau Vidal"},
-
+            # Etiquetes rellevans pels motors de cerca de google
+            {"name":"viewport", "content":"width=device-width", "initial-scale":"1.0"},
+            {"tag_name":"link", "rel":"canonical", "href":"https://nauvi.cat"},
+            {"tag_name": "link", "rel": "alternate", "hreflang": "ca-ES", "href": "https://nauvi.cat"},
+            {"tag_name":"link", "rel":"icon", "href":"/favicon.ico", "type":"image/x-icon"},
+            {"char_set": "UTF-8"},
+            # Open Graph bàsic
+            {"property":"og:type", "content":"profile"},
             {"property":"og:title", "content":"Arnau Vidal | Desenvolupador i Enginyer Industrial"},
-            {"property":"og:description", "content":"Descobreix els meus projectes en enginyeria i programació. Des de Python fins a aplicacions web com TaskTimer."},
-            # property="og:image", content="https://nauvi.dev/static/nauvi_logo.png",  # 👉 posa aquí el teu logo o portada
-            {"property""og:url", "content""https://nauvi.cat"},
-                        # 🐦 Twitter Card
-            {"name":"twitter:card", "content":"summary_large_image"},
-            {"name":"twitter:title", "content":"Arnau Vidal | Desenvolupador i Enginyer Industrial"},
-            {"name":"twitter:description", "content":"Explora els meus projectes i aplicacions com TaskTimer."},
-            {"name":"twitter:image", "content":"https://nauvi.dev/static/nauvi_logo.png"},
-            ],
-        )
+            {"property":"og:description", "content":"Portafoli d'Arnau Vidal, enginyer industrial i creador de solucions digitals. Projectes en Python, Rust i aplicacions web com TaskTimer."},
+            {"property":"og:url", "content":"https://nauvi.cat"},
+            {"property":"og:image", "content":"/og-nauvi.jpg"},
+            {"property":"og:site_name", "content":"Arnau Vidal Portfolio"},
+            {"property":"og:locale", "content":"ca_ES"},
+            {"property":"profile:first_name", "content":"Arnau"},
+            {"property":"profile:last_name", "content": "Vidal"},
+            {"property":"profile:username", "content":"nauvi"},
+            {"property":"profile:gender", "content":"male"},            
+            
+            
+            # # 🐦 Twitter Card
+            # {"name":"twitter:card", "content":"summary_large_image"},
+            # {"name":"twitter:title", "content":"Arnau Vidal | Desenvolupador i Enginyer Industrial"},
+            # {"name":"twitter:description", "content":"Explora els meus projectes i aplicacions com TaskTimer."},
+            # {"name":"twitter:image", "content":"https://nauvi.dev/static/nauvi_logo.png"},
+        ],
+    )
 def index_portafoli() -> rx.Component:
     # Welcome Page (Index)
-    my_child = rx.container(
+    my_child = rx.center(
         rx.vstack(
             rx.heading(
                 "Arnau Vidal Hernando", 
-                size = "8",
+                font_size="clamp(16px, 3.2vw, 36px)",
+                as_='h2'
             ),
             rx.avatar(
                 src = "avatar.jpg",
@@ -115,11 +129,15 @@ def index_portafoli() -> rx.Component:
         align_items = "center",
         max_width='80vw',
         min_height="85vh",
-        ),        
-        align='center',
+        ),     
+        margin_top='0.75em',   
+        width='100%',
     )
     return base_page(my_child)
 
 
 app = rx.App(enable_state=False)
 app.add_page(index_portafoli)
+
+
+
