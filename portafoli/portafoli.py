@@ -54,13 +54,13 @@ def index_portafoli() -> rx.Component:
             ),
             rx.hstack(
                 rx.link(
-                    rx.icon("mail", size=3),
+                    rx.icon("mail"),
                     href="mailto:nauvi.dev@gmail.com",
                     aria_label="Contacta per correu",
                     is_external=True,
                 ),
                 rx.link(
-                    rx.icon("phone", size=3,),
+                    rx.icon("phone"),
                     href="tel:+34661139326",
                     aria_label="Truca al 661 13 93 23",
                     is_external=True,   
