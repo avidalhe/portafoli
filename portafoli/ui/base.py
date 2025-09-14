@@ -15,6 +15,6 @@ def base_page(child: rx.Component, *args, **kwargs) -> rx.Component:
             justify='center',
         ),
 
-        rx.color_mode.button(position="bottom-left"),
+        rx.color_mode.button(position="bottom-left", aria_label='Botó per canivar entre mode fosc i mode clar'),
         id = "my-base-container"
     )
