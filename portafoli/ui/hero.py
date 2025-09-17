@@ -23,4 +23,5 @@ def about_me () -> rx.Component:
         ), # rx.text
         width = '100%',
         align='center',
+        id='qui-soc'
     )

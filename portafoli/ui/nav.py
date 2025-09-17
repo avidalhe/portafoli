@@ -34,7 +34,7 @@ def navbar() -> rx.Component:
             ),#rx.hstack
             
         ), # rx.mobile_and_tablet
-        bg = rx.color("tomato", 3),
+        bg = rx.color("blue", 3),
         padding = "1em",
         width = "100%",
         id = "my-main-nav"

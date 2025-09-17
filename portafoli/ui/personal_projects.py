@@ -84,6 +84,7 @@ def projectes_destacats()->rx.Component:
         ), # rx.card
         width='100%',
         align='center',
+        id="projectes"
     )
 
 

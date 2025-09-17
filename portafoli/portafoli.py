@@ -66,6 +66,43 @@ def index_portafoli() -> rx.Component:
                     is_external=True,   
                 ),
             ),
+            rx.flex(
+                rx.text("| "),
+                rx.link(
+                    rx.color_mode_cond(
+                        dark=rx.text("Qui sóc |", color="white"),
+                        # segon si dark mode
+                        light=rx.text("Qui sóc |", color='black')
+                    ), # rx.color_mode_cond
+                    href="#qui-soc",
+                    aria_label = "Link que et porta a la descripció de qui soc",
+                    outline_color="transparent",
+                    text_decoration='None'  
+                ),
+                rx.link(
+                    rx.color_mode_cond(
+                        dark=rx.text("Els meus serveis |", color='white'),
+                        light=rx.text("Els meus serveis", color='black'),
+                    ), #rx.color_mode_cond
+                    aria_label='Redirecció als meus serveis',
+                    outline_color="transparent",
+                    text_decoration='None',
+                    href="#", # Aquí he de posar el link de la meva pàgina de serveis que he de crear més tard.
+                ), #rx.link
+                rx.link(
+                    rx.color_mode_cond(
+                        dark=rx.text("Els meus Projectes |", color="white"),
+                        # segon si dark mode
+                        light=rx.text("Els meus Projectes |", color='black')
+                    ), # rx.color_mode_cond
+                    href="#projectes",
+                    aria_label = "Link que et porta a els meus projectes",
+                    outline_color="transparent",
+                    text_decoration='None',
+                ),
+                space='3',
+                direction="column",
+            ),
             about_me(),
             rx.divider(),
             projectes_destacats(),
