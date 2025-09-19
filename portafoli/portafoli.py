@@ -3,6 +3,8 @@ import reflex as rx
 from .ui.base import base_page
 from .ui.hero import about_me
 from .ui.personal_projects import projectes_destacats
+from .ui.services import my_services
+from .navigation import routes
 
 @rx.page(route="/", 
         title="Arnau Vidal | Enginyer Industrial i Desenvolupador de Software",
@@ -82,12 +84,12 @@ def index_portafoli() -> rx.Component:
                 rx.link(
                     rx.color_mode_cond(
                         dark=rx.text("Els meus serveis |", color='white'),
-                        light=rx.text("Els meus serveis", color='black'),
+                        light=rx.text("Els meus serveis |", color='black'),
                     ), #rx.color_mode_cond
                     aria_label='Redirecció als meus serveis',
                     outline_color="transparent",
                     text_decoration='None',
-                    href="#", # Aquí he de posar el link de la meva pàgina de serveis que he de crear més tard.
+                    href=routes.ELS_MEUS_SERVEIS, # Aquí he de posar el link de la meva pàgina de serveis que he de crear més tard.
                 ), #rx.link
                 rx.link(
                     rx.color_mode_cond(
@@ -100,24 +102,30 @@ def index_portafoli() -> rx.Component:
                     outline_color="transparent",
                     text_decoration='None',
                 ),
-                space='3',
-                direction="column",
+                space='5',
+                direction="row",
             ),
             about_me(),
             rx.divider(),
             projectes_destacats(),
-        align_items = "center",
-        max_width='80vw',
-        min_height="85vh",
+            align_items = "center",
+            max_width='80vw',
+            min_height="85vh",
         ),     
         margin_top='0.75em',   
         width='100%',
     )
     return base_page(my_child)
 
+def my_service() -> rx.Component:
+    my_child = rx.fragment(
+        my_services(), # Cridem el component 'my_service'
+    )
+    return base_page(my_child)
 
 app = rx.App(enable_state=False)
 app.add_page(index_portafoli)
+app.add_page(my_service, route='/my_services')
 
 
 
