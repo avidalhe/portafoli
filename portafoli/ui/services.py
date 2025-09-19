@@ -99,7 +99,18 @@ def my_services() -> rx.Component:
                     ),
                 ),
                 size='3',
-            ),
+            ), # rx.container
+            rx.link(
+                rx.button(
+                    "Contacta'm per WhatsApp",
+                    color_scheme='green',
+                    size='4',
+                    variant='solid',
+                    border_radius='full',
+                ),
+                href="https://wa.me/34661139326",
+                is_external=True,
+            ), 
             margin_top='1.5em', 
             align = "center",
             max_width='80vw',

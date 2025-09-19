@@ -72,9 +72,9 @@ def index_portafoli() -> rx.Component:
                 rx.text("| "),
                 rx.link(
                     rx.color_mode_cond(
-                        dark=rx.text("Qui sóc |", color="white"),
+                        dark=rx.text("Qui sóc |", color="white", font_size="clamp(10px, 2.1vw, 16px)",),
                         # segon si dark mode
-                        light=rx.text("Qui sóc |", color='black')
+                        light=rx.text("Qui sóc |", color='black', font_size="clamp(10px, 2.1vw, 16px)",)
                     ), # rx.color_mode_cond
                     href="#qui-soc",
                     aria_label = "Link que et porta a la descripció de qui soc",
@@ -83,19 +83,20 @@ def index_portafoli() -> rx.Component:
                 ),
                 rx.link(
                     rx.color_mode_cond(
-                        dark=rx.text("Els meus serveis |", color='white'),
-                        light=rx.text("Els meus serveis |", color='black'),
+                        dark=rx.text("Els meus serveis |", color='white', font_size="clamp(10px, 2.1vw, 16px)",),
+                        light=rx.text("Els meus serveis |", color='black', font_size="clamp(10px, 2.1vw, 16px)",),
                     ), #rx.color_mode_cond
                     aria_label='Redirecció als meus serveis',
                     outline_color="transparent",
                     text_decoration='None',
                     href=routes.ELS_MEUS_SERVEIS, # Aquí he de posar el link de la meva pàgina de serveis que he de crear més tard.
+                    is_external=True,
                 ), #rx.link
                 rx.link(
                     rx.color_mode_cond(
-                        dark=rx.text("Els meus Projectes |", color="white"),
+                        dark=rx.text("Els meus Projectes |", color="white", font_size="clamp(10px, 2.1vw, 16px)",),
                         # segon si dark mode
-                        light=rx.text("Els meus Projectes |", color='black')
+                        light=rx.text("Els meus Projectes |", color='black',font_size="clamp(10px, 2.1vw, 16px)",)
                     ), # rx.color_mode_cond
                     href="#projectes",
                     aria_label = "Link que et porta a els meus projectes",
