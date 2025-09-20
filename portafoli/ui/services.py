@@ -9,7 +9,7 @@ def my_services() -> rx.Component:
             rx.fragment(
                 rx.heading(
                     "TRANSFORMA LA TEVA PRESENCIA DIGITAL",
-                    font_size="clamp(16px, 3.8vw, 42px)",
+                    # font_size="clamp(16px, 3.8vw, 42px)",
                     color_scheme='indigo',
                     text_align='center',
                     high_contrast=True,
@@ -18,12 +18,12 @@ def my_services() -> rx.Component:
                 ), 
                 rx.text(
                     "Augmenta la teva presencia a un nivell superior!",
-                    font_size="clamp(10px, 2.1vw, 16px)",
+                    # font_size="clamp(10px, 2.1vw, 16px)",
                     font_weight='700', #Estilitzem el text en negreta.
+                    max_width='70vw'
                 ),# rx.text
                 margin_bottom = '1erm'
             ), #rx.fragment
-            rx.section(),
             rx.tablet_and_desktop(
                 rx.table.root(
                     rx.table.header(
